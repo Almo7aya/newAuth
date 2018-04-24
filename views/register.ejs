@@ -1,0 +1,40 @@
+<% include ./layouts/header.ejs %>
+
+<h2>Hello please register</h2>
+
+<form action="/register" method="post">
+
+    <div>
+        <label>Name: </label>
+        <input type="text" name="name">
+    </div>
+    <div>
+        <label>Username: </label>
+        <input type="text" name="username">
+    </div>
+    <div>
+        <label>Email: </label>
+        <input type="email" name="email">
+    </div>
+    <div>
+        <label>password: </label>
+        <input type="password" name="password">
+    </div>
+
+    <div>
+        <label>Repassword: </label>
+        <input type="password" name="repassword">
+    </div>
+
+    <div>
+        <label>first secret: </label>
+        <textarea name="secret"></textarea>
+    </div>
+
+    <div>
+        <input type="submit" value="Register">
+    </div>
+
+</form>
+
+<% include ./layouts/footer.ejs %>
