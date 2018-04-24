@@ -11,6 +11,12 @@ const morgan = require('morgan');
 const port = process.env.PORT || 8080;
 const mongodbUrl = 'mongodb://localhost://newAuth';
 
+/// import the main routes
+const index = require('./routes/index');
+const login = require('./routes/login');
+const register = require('./routes/register');
+const secret = require('./routes/secret');
+
 // init express app
 const app = express();
 
@@ -40,10 +46,10 @@ app.use(session({
 }));
 
 // set the routes
-app.use('', );
-app.use('login', );
-app.use('register', );
-
+app.use('/', index);
+app.use('/login', login);
+app.use('/register', register);
+app.use('/secret', secret);
 
 // start mongodb connect
 mongoose.connect(mongodbUrl).then(() => {
