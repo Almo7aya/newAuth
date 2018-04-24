@@ -51,6 +51,11 @@ app.use('/login', login);
 app.use('/register', register);
 app.use('/secret', secret);
 
+// error handler middleware
+app.use((err, req, res, next) => {
+    res.json(err);
+});
+
 // start mongodb connect
 mongoose.connect(mongodbUrl).then(() => {
     console.log('Connect with mongodb successful');
