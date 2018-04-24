@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="714a8504-0f04-408a-be6c-8617febf1f5b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/header.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -46,20 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/layouts/header.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="register.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+            <state relative-caret-position="327">
+              <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
               <folding>
                 <element signature="e#403#419#0" />
               </folding>
@@ -243,7 +232,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524556918912</updated>
-      <workItem from="1524556936026" duration="6732000" />
+      <workItem from="1524556936026" duration="7487000" />
     </task>
     <task id="LOCAL-00001" summary="fix mongodb connect error with routers">
       <created>1524559650354</created>
@@ -294,11 +283,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524561862256</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add register body validation">
+      <created>1524563702479</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1524563702479</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6732000" />
+    <option name="totallyTimeSpent" value="7487000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -319,7 +315,7 @@
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32921174" />
       <window_info anchor="bottom" id="Find" order="5" sideWeight="0.4977307" weight="0.32921174" />
       <window_info anchor="right" id="Version Control" order="4" sideWeight="0.49156627" visible="true" weight="0.26928896" />
-      <window_info active="true" anchor="bottom" id="Run" order="9" sideWeight="0.4977307" visible="true" weight="0.3431221" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" sideWeight="0.4977307" visible="true" weight="0.17310664" />
       <window_info anchor="bottom" id="Quokka" order="0" />
       <window_info id="Structure" order="2" sideWeight="0.5007728" side_tool="true" weight="0.25416037" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.50075644" side_tool="true" weight="0.39876354" />
@@ -349,7 +345,8 @@
     <MESSAGE value="add register render method" />
     <MESSAGE value="add user model and its methods" />
     <MESSAGE value="add register post commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="add register post commands" />
+    <MESSAGE value="add register body validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add register body validation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -421,13 +418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/header.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -435,6 +425,13 @@
           <folding>
             <element signature="e#1331#1464#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/header.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -447,8 +444,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        <state relative-caret-position="327">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
           <folding>
             <element signature="e#403#419#0" />
           </folding>
