@@ -5,7 +5,7 @@ router.get('/', (req, res, next) => {
     res.render('index', {
         title: 'Home',
         msg: '',
-        error: []
+        errors: []
     });
 });
 
