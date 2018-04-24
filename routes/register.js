@@ -2,7 +2,10 @@ const router = require('express').Router();
 
 
 router.get('/', (req, res, next) => {
-    res.end('register');
+    res.render('register', {
+        msg: '',
+        title: 'Register'
+    });
 });
 
 
