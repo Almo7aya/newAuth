@@ -1,20 +1,11 @@
-<html>
-<head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
 
-    <p><%= msg && msg %></p>
+<% include ./layouts/header.ejs %>
 
-    <h2><%= title %></h2>
+<h2>Hello please login or register to save your secret</h2>
 
-    <h2>Hello please login or register to save your secret</h2>
+<a href="/login" >login</a>
+<br />
+<br />
+<a href="/register">register</a>
 
-    <a href="/login" >login</a>
-    <br />
-    <br />
-    <a href="/register">register</a>
-
-</body>
-</html>
+<% include ./layouts/footer.ejs %>
