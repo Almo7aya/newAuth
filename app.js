@@ -6,10 +6,16 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const path = require('path');
 const morgan = require('morgan');
+
+// server variables
 const port = process.env.PORT || 8080;
+const mongodbUrl = 'mongodb://localhost://newAuth';
 
 // init express app
 const app = express();
+
+// morgan logger
+app.use(morgan('dev'));
 
 // init passport
 app.use(passport.initialize());
@@ -37,3 +43,12 @@ app.use(session({
 app.use('', );
 app.use('login', );
 app.use('register', );
+
+
+// start mongodb connect
+mongoose.connect(mongodbUrl).then(() => {
+    console.log('Connect with mongodb successful');
+    app.listen(port);
+}).catch( ()=> {
+    console.error('Error with connect with mongodb');
+});
