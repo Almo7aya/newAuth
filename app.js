@@ -52,9 +52,12 @@ app.use('/register', register);
 app.use('/secret', secret);
 
 // error handler middleware
-app.use((err, req, res, next) => {
-    res.json(err);
-});
+// app.use((err, req, res, next) => {
+//     res.json({
+//         err,
+//         error: true
+//     });
+// });
 
 // start mongodb connect
 mongoose.connect(mongodbUrl).then(() => {
