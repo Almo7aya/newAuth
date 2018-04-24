@@ -2,7 +2,10 @@ const router = require('express').Router();
 
 
 router.get('/', (req, res, next) => {
-    res.end('index');
+    res.render('index', {
+        title: 'Home',
+        msg: ''
+    });
 });
 
 
