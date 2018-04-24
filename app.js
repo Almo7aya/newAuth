@@ -9,7 +9,7 @@ const morgan = require('morgan');
 
 // server variables
 const port = process.env.PORT || 8080;
-const mongodbUrl = 'mongodb://localhost://newAuth';
+const mongodbUrl = 'mongodb://localhost/newAuth';
 
 /// import the main routes
 const index = require('./routes/index');
@@ -54,7 +54,7 @@ app.use('/secret', secret);
 // start mongodb connect
 mongoose.connect(mongodbUrl).then(() => {
     console.log('Connect with mongodb successful');
-    app.listen(port);
-}).catch( ()=> {
-    console.error('Error with connect with mongodb');
+    app.listen(port, () => console.log('Server is running at port ' + port));
+}).catch( err => {
+    console.error('Error with connect with mongodb', err);
 });
