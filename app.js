@@ -14,6 +14,7 @@ const mongodbUrl = 'mongodb://localhost/newAuth';
 /// import the main routes
 const index = require('./routes/index');
 const login = require('./routes/login');
+const logout = require('./routes/logout');
 const register = require('./routes/register');
 const secret = require('./routes/secret');
 
@@ -48,16 +49,19 @@ app.use(session({
 // set the routes
 app.use('/', index);
 app.use('/login', login);
+app.use('/logout', logout);
 app.use('/register', register);
 app.use('/secret', secret);
 
 // error handler middleware
-// app.use((err, req, res, next) => {
-//     res.json({
-//         err,
-//         error: true
-//     });
-// });
+app.use((err, req, res, next) => {
+    console.log(err);
+    res.status(err.status || 500).json({
+        msg :err.msg,
+        err,
+        error: true
+    });
+});
 
 // start mongodb connect
 mongoose.connect(mongodbUrl).then(() => {

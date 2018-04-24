@@ -2,7 +2,11 @@ const router = require('express').Router();
 
 
 router.get('/', (req, res, next) => {
-    res.end('secret');
+    res.render('secret', {
+        msg: '',
+        title: 'Secrets',
+        errors: []
+    });
 });
 
 
