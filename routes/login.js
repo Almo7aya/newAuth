@@ -5,7 +5,8 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const UserModel = require('../models/User');
 
-router.get('/', (req, res, next) => {
+
+router.get('/',(req, res, next) => {
     res.render('login', {
         msg: '',
         errors: [],

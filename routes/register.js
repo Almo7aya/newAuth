@@ -3,6 +3,7 @@ const {check, validationResult} = require('express-validator/check');
 
 const UserModel = require('../models/User');
 
+
 router.get('/', (req, res, next) => {
     res.render('register', {
         msg: '',
@@ -16,7 +17,7 @@ router.post('/', [
     check('username').isLength({min: 1}).withMessage('Where is Username'),
     check('email').isEmail().withMessage('Where is username').normalizeEmail(),
     check('password').isLength({min: 1}).withMessage('Where is password'),
-    check('repassword').custom((value,{req, loc, path}) => {
+    check('repassword').custom((value, {req, loc, path}) => {
         if (value !== req.body.password) {
             // trow error if passwords do not match
             throw new Error("Passwords don't match");
@@ -42,7 +43,7 @@ router.post('/', [
     userDetails.secrets = [userDetails.secret];
     delete userDetails.secret;
     const newUser = new UserModel(userDetails);
-    UserModel.registerUser(newUser).then( doc => {
+    UserModel.registerUser(newUser).then(doc => {
         console.log('User Registered');
         res.redirect('/login');
     }).catch(next);

@@ -1,11 +1,18 @@
 const router = require('express').Router();
 
+const UserModel = require('../models/User');
 
-router.get('/', (req, res, next) => {
+const { isAuth } = require('../utils/ensureAuth');
+
+
+router.get('/', isAuth, (req, res, next) => {
+
+
     res.render('secret', {
-        msg: '',
+        msg: 'Hello ' + req.user.name,
         title: 'Secrets',
-        errors: []
+        errors: [],
+        secrets: req.user.secrets
     });
 });
 

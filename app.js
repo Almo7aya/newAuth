@@ -24,6 +24,13 @@ const app = express();
 // morgan logger
 app.use(morgan('dev'));
 
+// session
+app.use(session({
+    secret: 'secrettexthere',
+    saveUninitialized: true,
+    resave: true,
+}));
+
 // init passport
 app.use(passport.initialize());
 app.use(passport.session());
@@ -37,14 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // body parser
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// session
-app.use(session({
-    secret: 'secret',
-    resave: true,
-    saveUninitialized: false
-}));
+app.use(bodyParser.urlencoded({extended: true}));
 
 // set the routes
 app.use('/', index);
@@ -57,7 +57,7 @@ app.use('/secret', secret);
 app.use((err, req, res, next) => {
     console.log(err);
     res.status(err.status || 500).json({
-        msg :err.msg,
+        msg: err.msg,
         err,
         error: true
     });
@@ -67,6 +67,6 @@ app.use((err, req, res, next) => {
 mongoose.connect(mongodbUrl).then(() => {
     console.log('Connect with mongodb successful');
     app.listen(port, () => console.log('Server is running at port ' + port));
-}).catch( err => {
+}).catch(err => {
     console.error('Error with connect with mongodb', err);
 });
